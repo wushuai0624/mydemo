@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入学生成绩信息</title>
+</head>
+<style type="text/css">
+    body {
+            margin: 0;
+            padding: 0;
+            font: 16px/20px microsft yahei;
+            background-color: #666666;
+        }
+     h1{
+            text-align: center;
+            color: #FFFFFF;
+            font-weight: 500;
+     }
+    input,a{
+            width: 320px;
+            display: block;
+            height: 36px;
+            border: 0;
+            outline: 0;
+            padding: 6px 10px;
+            line-height: 24px;
+            margin: 32px auto;
+            -webkit-transition: all 0s ease-in 0.1ms;
+            -moz-transition: all 0s ease-in 0.1ms;
+            transition: all 0s ease-in 0.1ms;
+    }
+    input[type="text"]{
+            background-color: #FFFFFF;
+            font-size: 16px;
+            color: #50a3a2;
+        }
+    input[type='submit'] {
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: #666666;
+            background-color: #FFFFFF;
+        }
+    input[type="submit"]:hover{
+             background-color: brown;
+         }
+
+    span{
+            font-size: 20px;
+            font-weight: bold;
+            float: right;
+        }
+</style>
+<body>
+    <h1>请添加学生成绩信息</h1>
+    <form method="post" action="{% url 'insert2' %}">
+        {% csrf_token %}
+        <span></span><input type="text" name="name" placeholder=" student's name"><br>
+        <span></span><input type="text" name="gender" placeholder="student's gender"><br>
+        <span></span><input type="text" name="sno" placeholder="student's sno"><br>
+        <span></span><input type="text" name="score" placeholder="student's score"><br>
+        <span></span><input type="submit" value="提交"><br>
+        <span></span><a href="/stu" class="reg"> 返回主页面 </a>
+    </form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改学生成绩信息</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            font: 16px/20px microsft yahei;
+            background-color: #666666;
+        }
+        input,a,h1{
+            width: 320px;
+            display: block;
+            height: 36px;
+            border: 0;
+            outline: 0;
+            padding: 6px 10px;
+            line-height: 24px;
+            margin: 32px auto;
+            -webkit-transition: all 0s ease-in 0.1ms;
+            -moz-transition: all 0s ease-in 0.1ms;
+            transition: all 0s ease-in 0.1ms;
+        }
+    </style>
+</head>
+<body>
+   <h1>请输入要修改学生的姓名和成绩</h1>
+    <form method="post" action="{% url 'mod2' %}">
+        {% csrf_token %}
+        <span></span><input type="text" name="name" placeholder=" student's name"><br>
+        <span></span><input type="text" name="score" placeholder=" student's score"><br>
+        <span></span><input type="submit" value="修改"><br>
+        <span></span><a href="/stu" class="reg"> 返回主页面 </a>
+    </form>
+</body>
+</html>

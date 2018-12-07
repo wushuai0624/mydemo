@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students information</title>
+</head>
+<style type="text/css">
+    h1{
+        position: relative;
+        width: 100%;
+        height: 100px;
+        background-color: #50a3a2;
+        color: saddlebrown;
+    }
+    h1 span{
+        position: absolute;
+    }
+    h3 span{
+        display: block;
+        margin-top:10px;
+        margin-left: 300px;
+        margin-bottom: 0px;
+        color: darkcyan;
+    }
+    .menu {
+            width: 958px;
+            height: 500px;
+            border: 1px solid #333333;
+            margin: 0px auto;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            line-height: 40px;
+            font-size: 0;
+        }
+    .menu li{
+            display: inline-block;
+            font-size: 14px;
+        }
+    .menu li.line{
+            color: #333333;
+            margin: 0 20px;
+        }
+    a{
+        text-decoration: none;
+        font-family:"Microsoft YaHei UI";
+        color: red;
+        font-size: 20px;
+    }
+    a:hover{
+        color:darkgray;
+    }
+</style>
+<script type="text/javascript">
+    window.onload = function () {
+        var Box = document.getElementById('box');
+        var left=20;
+        var top = 20;
+        s1 = setInterval(function () {
+                if (left<1000){
+                    left=left+10;
+                    Box.style.left=left+'px';
+
+                }
+                else {
+                    clearInterval(s1);
+                }
+                if (top<50){
+                    top=top+5;
+                     Box.style.top=top+'px';
+                }
+                else{
+                    top=top-50;
+                    Box.style.top=top+'px';
+                }
+
+        },1000)
+    }
+</script>
+<body>
+    <h1 ><span id="box">欢迎进入学生成绩管理系统</span></h1>
+    <h3><span>2018年秋季16级云计算三班python学生成绩表</span></h3>
+    <a href="/insert">添加学生成绩</a><br>
+    <a href="/query">查询学生信息</a><br>
+    <a href="/delete">删除学生信息</a><br>
+    <a href="/stu">回到主页面</a>
+    <ul class="menu">
+        <li>姓名</li>
+        <li class="line">|</li>
+        <li>性别</li>
+        <li class="line">|</li>
+        <li>学号</li>
+        <li class="line">|</li>
+        <li>分数</li><br>
+        <li>{{ i.name }}</li>
+        <li class="line">|</li>
+        <li>{{ i.gender }}</li>
+        <li class="line">|</li>
+        <li>{{ i.sno }}</li>
+        <li class="line">|</li>
+        <li>{{ i.score }}</li>
+        <br>
+    </ul>
+</body>
+</html>
